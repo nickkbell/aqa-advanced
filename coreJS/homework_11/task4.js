@@ -1,5 +1,6 @@
+/* eslint-disable max-classes-per-file */
 class PromiseMethods {
-    constructor ( url ) {
+    constructor (url) {
         this.url = url;
     }
 
@@ -13,15 +14,16 @@ class PromiseMethods {
 }
 
 class AsyncMethods {
-    constructor ( url ) {
+    constructor (url) {
         this.url = url;
     }
 
-    async fetchData ( url, options ) {
+    async fetchData (url, options) {
         try {
             const response = await fetch(url, options);
+
             return await response.json();
-        } catch ( error ) {
+        } catch (error) {
             console.error('Error:', error);
             throw error;
         }
@@ -31,7 +33,7 @@ class AsyncMethods {
         try {
             const users = await this.fetchData(this.url);
             console.log('GET Response:', users);
-        } catch ( error ) {
+        } catch (error) {
             console.error('Error:', error);
         }
     }
