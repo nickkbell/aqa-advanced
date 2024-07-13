@@ -1,7 +1,8 @@
 module.exports = {
     env: {
         browser: true,
-        es2021: true
+        es2021: true,
+        jest: true
     },
     extends: 'airbnb-base',
     overrides: [
@@ -23,6 +24,8 @@ module.exports = {
     },
     rules: {
         // base
+        'no-param-reassign': 'off',
+        'no-restricted-syntax': 'warn',
         'arrow-parens': ['warn', 'as-needed'],
         'comma-dangle': ['error', 'never'],
         'no-console': 'off',
@@ -40,7 +43,7 @@ module.exports = {
         'default-case': 'off',
         'max-len': ['warn', {code: 150}],
         'no-multi-assign': 'off',
-        'no-return-assign': ['error', 'except-parens'],
+        'no-return-assign': ['warn', 'except-parens'],
         'import/no-cycle': 'off',
         'no-restricted-exports': 'off',
         'no-unused-vars': 'error',
