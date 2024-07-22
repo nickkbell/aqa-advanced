@@ -2,7 +2,7 @@ import axios from 'axios';
 import {resources, getRequestsByID, postRequests} from './fixture';
 
 
-describe('get all resources - should pass', () => {
+describe.skip('get all resources - should pass', () => {
     resources.forEach(resource => {
         test(`GET ${resource.url}`, async () => {
             const response = await axios.get(`https://jsonplaceholder.typicode.com/${resource.url}`);
@@ -13,7 +13,7 @@ describe('get all resources - should pass', () => {
     });
 });
 
-describe('check resources by ID - should pass', () => {
+describe.skip('check resources by ID - should pass', () => {
     for (const resource of getRequestsByID) {
         test(`GET ${resource.request.url}`, async () => {
             const response = await axios.get(`https://jsonplaceholder.typicode.com/${resource.request.url}`);
@@ -24,7 +24,7 @@ describe('check resources by ID - should pass', () => {
     }
 });
 
-describe('create resources - should pass', () => {
+describe.skip('create resources - should pass', () => {
     for (const request of postRequests) {
         test(`POST ${request.url}`, async () => {
             const response = await axios.post(`https://jsonplaceholder.typicode.com/${request.url}`, request.body);

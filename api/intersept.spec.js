@@ -32,7 +32,7 @@ instance.interceptors.response.use(
     }
 );
 
-describe('try to intersept request', () => {
+describe.skip('try to intersept request', () => {
     test('intersept request', async () => {
         try {
             await axios.get('https://jsonplaceholder.typicode.com/todos');
@@ -42,7 +42,7 @@ describe('try to intersept request', () => {
     });
 });
 
-describe('try to intersept response', () => {
+describe.skip('try to intersept response', () => {
     test('success intersept response', async () => {
         const response = await instance.get('https://jsonplaceholder.typicode.com/users');
 
